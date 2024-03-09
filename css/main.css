@@ -32,14 +32,23 @@ img {
   width: 270px;
 }
 
+.cards-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+
 /* card */
 .card-link {
+  display: inline-block;
   text-decoration: none;
-  transition: opacity 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .card-link:hover {
   opacity: 0.8;
+  transform: translateY(-5px);
 }
 
 .card {
@@ -130,3 +139,101 @@ img {
   line-height: 16px;
   color: rgb(119, 119, 119);
 }
+
+/* Button */
+.btn-more {
+  font-family: inherit;
+  border: none;
+  background-color: #E5E5E5;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(66, 144, 201);
+  width: 870px;
+  height: 80px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.btn-more img {
+  margin-right: 12px;
+}
+
+.btn-more:hover {
+  background-color: #d8d8d8;
+}
+
+/* Sidebar */
+.widget {
+}
+
+.widget__title {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.widget__title::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  background-image: url('../img/icons/chevron-up.svg');
+  background-repeat: no-repeat;
+  background-size: initial;
+  background-position: center;
+}
+
+.widget__body {
+}
+
+/* Location buttons group */
+.location {
+}
+
+.location__row {
+  display: flex;
+}
+
+.location__row:first-child {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+.location__row:last-child {
+  border-radius: 0 0 4px 4px;
+  border: 1px solid rgb(214, 214, 214);
+  border-top: none;
+}
+
+.location__btn {
+  flex-grow: 1;
+  font-family: inherit;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgb(60, 60, 60);
+  width: 67px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.location__btn--active {
+  background-color: rgb(255, 207, 38);
+}
+
+.location__btn:hover {
+  
+}
+
