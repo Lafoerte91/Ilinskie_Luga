@@ -192,7 +192,8 @@ img {
   background-position: center;
 }
 
-.widget__body {
+.widget:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 /* Location buttons group */
@@ -222,18 +223,137 @@ img {
   border: none;
   font-size: 14px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 50px;
   color: rgb(60, 60, 60);
   width: 67px;
   height: 50px;
   cursor: pointer;
-}
-
-.location__btn--active {
-  background-color: rgb(255, 207, 38);
+  transition: background-color 0.2s ease-in;
 }
 
 .location__btn:hover {
-  
+  background-color: #fff0bb;
 }
+
+.location_checkbox {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+  appearance: none;
+}
+
+.location_checkbox:checked + .location__btn {
+  background-color: rgb(255, 207, 38);
+}
+
+.location_checkbox:checked + .location__btn:hover {
+  background-color: #e0b000;
+}
+
+/* Radio */
+.radio {
+  display: block;
+  cursor: pointer;
+}
+
+.radio:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.radio__real {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+  appearance: none;
+}
+
+.radio__real:checked + .radio__fake {
+  background-color: rgb(255, 224, 116);
+}
+
+.radio__real:checked + .radio__fake::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  background: rgb(60, 60, 60);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+} 
+
+.radio__real:checked ~ .radio__title {
+  font-weight: 500;
+}
+
+.radio__fake {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(119, 119, 119);
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.radio__title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: rgb(0, 0, 0);
+}
+
+/* Checkbox */
+.checkbox {
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox__real {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+  appearance: none;
+}
+
+.checkbox__fake {
+}
+
+.checkbox__title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: rgb(0, 0, 0);
+}
+
+.checkbox:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.checkbox__real:checked ~ .checkbox__title {
+  font-weight: 500;
+}
+
+.checkbox__fake {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(119, 119, 119);
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.checkbox__real:checked + .checkbox__fake {
+  background-color: rgb(255, 224, 116);
+}
+
+
 
