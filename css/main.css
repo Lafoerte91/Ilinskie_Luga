@@ -47,7 +47,17 @@ img {
 
 @media(max-width: 830px) {
   .sidebar {
-   display: none;
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: 0 !important;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 20px 4px rgb(0 0 0 / 37%);
+    overflow-y: scroll;
+    transform: translateX(-150%);
   }
 }
 
@@ -56,6 +66,13 @@ img {
   justify-content: space-between;
   row-gap: 30px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .cards-holder {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* card */
