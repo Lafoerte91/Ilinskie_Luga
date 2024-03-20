@@ -362,15 +362,16 @@ img {
   cursor: pointer;
 }
 
+.checkbox--hidden {
+  display: none;
+}
+
 .checkbox__real {
   width: 1px;
   height: 1px;
   position: absolute;
   opacity: 0;
   appearance: none;
-}
-
-.checkbox__fake {
 }
 
 .checkbox__title {
@@ -442,6 +443,10 @@ img {
   color: #007fda;
   opacity: 0.8;
   text-decoration: underline;
+}
+
+.widget__show-hidden:active, .widget__show-hidden:focus {
+  outline: none;
 }
 
 /* Toggle */

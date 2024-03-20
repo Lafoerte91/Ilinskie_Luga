@@ -53,8 +53,19 @@ const showMoreOptions = document.querySelector('.widget__show-hidden')
 const hiddenChecknboxes = document.querySelectorAll('.checkbox--hidden')
 
 showMoreOptions.onclick = function() {
-  hiddenChecknboxes.forEach(item => {
-    item.classList.remove('.checkbox--hidden')
-  });
-  this.remove()
+  // Если скрыты, показываем
+  if(this.dataset.options == 'hidden') {
+    hiddenChecknboxes.forEach(function(item) {
+      item.style.display = 'block'
+    })
+    this.dataset.options = 'visible'
+    this.innerText = 'Скрыть дополнительные опции'
+  // Если видны, скрываем
+  } else if(this.dataset.options == 'visible') {
+    hiddenChecknboxes.forEach(function(item) {
+      item.style.display = 'none'
+    })
+    this.innerText = 'Показать еще'
+    this.dataset.options = 'hidden'
+  }
 }
